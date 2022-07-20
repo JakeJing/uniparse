@@ -9,7 +9,7 @@ from Cython.Build import cythonize
 
 
 def build_extra_compile_args():
-    args = ["-O3", "-ffast-math", "-march=native"]
+    args = ["-O3", "-ffast-math", "-mcpu=apple-m1"]
 
     system_name = platform.system()
     if system_name == "Darwin":

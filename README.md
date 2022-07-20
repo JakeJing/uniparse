@@ -12,7 +12,14 @@ pip install -r requirements.txt
 pip install [-e] .  # include -e if you'd like to be able to modify framework code
 ```
 
+Note: for Apple M1 machine, you need to edit the `setup.py` by replacing `-march=native` with `-mcpu=apple-m1`. After that, you need to compile the cython implementations by running the following code.
+
+```python
+python3 setup.py build_ext --inplace
+```
+
 ### [Neural Models]
+
 UniParse includes a small collection of state-of-the-art neural models that are implemented using a high level model wrapper that should reduce development time significantly. This high-level model wrapper component currently supports two neural backends, namely: DyNet and PyTorch. One of these libraries are required to use the model wrapper.
 
 ```bash
